@@ -1,0 +1,63 @@
+.background-slide {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin: 0 !important;
+  background-size: cover !important;
+  background-position: top !important;
+  -webkit-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
+  opacity: 0;
+  z-index: 1;
+  background-attachment: fixed; }
+  .background-slide.active {
+    opacity: 0.8;
+    z-index: 1; }
+  .background-slide.background-image {
+    background: url(../media/background1.jpg); }
+
+.text-holder {
+  width: 100%;
+  height: 100%; }
+  .text-holder .text-section {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    margin: 0 auto; }
+    .text-holder .text-section div {
+      position: relative;
+      padding: 0 200px;
+      margin-top: 10%; }
+      .text-holder .text-section div p {
+        margin: 300px 0; }
+      .text-holder .text-section div .slide {
+        margin-top: 2200px; }
+        .text-holder .text-section div .slide.first {
+          margin-top: 300px; }
+
+.background-video {
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+  .background-video.active video {
+    opacity: 0.5; }
+  .background-video video {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: fill;
+    opacity: 0; }
+
+body {
+  background-size: cover !important;
+  opacity: 0.8;
+  transition: 0.6s ease-out; }
+  body.background-1 {
+    background: url(../media/background1.jpg); }
+  body.background-2 {
+    background: url(../media/background2.jpg); }
