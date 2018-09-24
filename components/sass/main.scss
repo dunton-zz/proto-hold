@@ -44,7 +44,7 @@
       }
 
       .slide {
-        margin-top: 2200px;
+        padding-top: 2200px;
 
         &.first {
           margin-top: 300px;
@@ -84,9 +84,11 @@ body {
 
   &.background-1 {
     background: url(../media/background1.jpg);
+    transition: 0.6s ease-out;
   }
 
   &.background-2 {
     background: url(../media/background2.jpg);
+    transition: 0.6s ease-out;
   }
 }

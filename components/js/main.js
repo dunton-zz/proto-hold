@@ -1,49 +1,97 @@
 const getSlides = () => {
-  let waypoint1 = new Waypoint({
-    element: document.querySelector(".slide-1"),
-    handler: function() {
-      console.log("slide-1");
+  let waypoint1 = new Waypoint.Inview({
+    element: $("#slide-1"),
+    enter: function(direction) {
+      console.log("slide 1 Enter triggered");
+      $("body").addClass("background-1");
     },
-    offset: 50
+    entered: function(direction) {
+      console.log("slide 1 Entered triggered");
+    },
+    exit: function(direction) {
+      console.log("Exit triggered with direction " + direction);
+    },
+    exited: function(direction) {
+      console.log("Exited triggered with direction " + direction);
+      $("body").removeClass("background-1");
+    },
+    context: $(".text-section")
   });
 
-  let waypoint2 = new Waypoint({
-    element: document.querySelector(".slide-2"),
-    handler: function() {
-      console.log("slide-2");
+  let waypoint2 = new Waypoint.Inview({
+    element: $("#slide-2"),
+    enter: function(direction) {
+      console.log("slide 2 Enter triggered");
+      $("body").addClass("background-2");
     },
-    offset: 50
+    entered: function(direction) {
+      console.log("slide 2 Entered triggered");
+    },
+    exit: function(direction) {
+      console.log("Exit triggered with direction " + direction);
+    },
+    exited: function(direction) {
+      console.log("Exited triggered with direction " + direction);
+      $("body").removeClass("background-2");
+    },
+    context: $(".text-section")
   });
 
-  let waypoint3 = new Waypoint({
-    element: document.querySelector(".slide-3"),
-    handler: function() {
-      console.log("slide-3");
+  let waypoint3 = new Waypoint.Inview({
+    element: $("#slide-3"),
+    enter: function(direction) {
+      console.log("slide 3 Enter triggered");
+      $(".background-video").addClass("active");
     },
-    offset: 50
+    entered: function(direction) {
+      console.log("slide 3 Entered triggered");
+    },
+    exit: function(direction) {
+      console.log("Exit triggered with direction " + direction);
+    },
+    exited: function(direction) {
+      console.log("Exited triggered with direction " + direction);
+      $(".background-video").removeClass("active");
+    },
+    context: $(".text-section")
   });
 
   var slide = document.querySelector(`[data-slide-number="0"]`);
-  console.log(waypoint1);
+  //console.log(waypoint1);
 };
 
 const fireWaypoints = () => {
-  $(".slide-1").waypoint(function() {
-    console.log("slide-1 fired");
-    console.log(this);
-  });
-
-  $(".slide-2").waypoint(
+  $("#slide-1").waypoint(
     function() {
-      console.log("slide-2 fired");
+      console.log(this);
     },
-    { offset: "30%" }
+    {
+      //offset: 900
+    }
   );
 
-  console.log("hi");
+  $("#slide-2").waypoint(
+    function() {
+      console.log("hi");
+    },
+    {
+      enter: function(direction) {
+        console.log("Enter triggered with direction " + direction);
+      }
+    }
+  );
+
+  $("#slide-3").waypoint(
+    function() {
+      console.log("hi");
+    },
+    {
+      //offset: 900
+    }
+  );
 };
 
 $(document).ready(function() {
-  //getSlides();
-  fireWaypoints();
+  getSlides();
+  //fireWaypoints();
 });

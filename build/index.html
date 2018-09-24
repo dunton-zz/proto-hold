@@ -8,7 +8,7 @@
  </head>
  <body class="background-1">
    <div class="background-video ">
-     <video autoplay muted >
+     <video autoplay muted loop>
        <source src="media/sample.mp4" />
      </video>
    </div>
@@ -17,8 +17,8 @@
      <!--<div class="background-slide background-image active" data-slide-number="0"></div>-->
      <div class="text-holder">
        <div class="text-section">
-         <div>
-           <div class="slide-1 slide first">
+         <div class="text">
+           <div id="slide-1" class=" slide first">
              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                placerat lorem quam, eget consectetur elit iaculis porta. Morbi
                vehicula nec odio nec tristique. Pellentesque rhoncus ex
@@ -74,7 +74,7 @@
                lectus.</p>
            </div>
 
-           <div class="slide-2 slide">
+           <div id="slide-2" class=" slide">
              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                placerat lorem quam, eget consectetur elit iaculis porta. Morbi
                vehicula nec odio nec tristique. Pellentesque rhoncus ex
@@ -130,7 +130,7 @@
                lectus.</p>
            </div>
 
-           <div class="slide-3 slide">
+           <div id="slide-3" class=" slide">
              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
                placerat lorem quam, eget consectetur elit iaculis porta. Morbi
                vehicula nec odio nec tristique. Pellentesque rhoncus ex
@@ -197,6 +197,8 @@
 
 
    <!-- -->
+   <script src="js/jquery.waypoints.min.js"></script>
+   <script src="js/inview.min.js"></script>
    <script src="js/vendors.min.js"></script>
    <script src="js/scripts.min.js"></script>
 

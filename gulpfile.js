@@ -19,7 +19,7 @@ gulp.task("minify-js", function() {
   console.log(">>minify js");
   return gulp
     .src("components/js/*.js")
-    .pipe(rename("scripts.min.js"))
+    .pipe(concat("scripts.min.js"))
     .pipe(uglify(/* options */))
     .pipe(gulp.dest("build/js"));
 });
